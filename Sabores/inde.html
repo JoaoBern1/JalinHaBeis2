@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jalin Ha Beis - Comida Árabe</title>
+  <style>
+    :root {
+      --vermelho: #c62828;
+      --amarelo: #fdd835;
+      --branco: #fff;
+      --preto: #000;
+      --cinza: #f4f4f4;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--cinza);
+      color: var(--preto);
+    }
+
+    header {
+      background-color: var(--vermelho);
+      padding: 20px;
+      color: var(--branco);
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      background-color: var(--amarelo);
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: var(--preto);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .banner {
+      background-image: url('https://source.unsplash.com/1600x400/?arabic,food');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      color: var(--vermelho);
+      border-bottom: 2px solid var(--amarelo);
+      padding-bottom: 5px;
+    }
+
+    .card {
+      background-color: var(--branco);
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .menu-item h3 {
+      margin: 10px 0 5px;
+    }
+
+    .menu-item p {
+      margin: 0;
+    }
+
+    .preco {
+      color: var(--vermelho);
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: var(--vermelho);
+      color: var(--branco);
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    .botao {
+      background-color: var(--amarelo);
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .botao:hover {
+      background-color: #fbc02d;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jalin Ha Beis</h1>
+    <p>O melhor da comida árabe diretamente para você</p>
+  </header>
+
+  <nav>
+    <a href="#menu">Cardápio</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <div class="banner"></div>
+
+  <div class="container">
+    <section id="menu">
+      <h2>Cardápio</h2>
+      <div class="menu">
+        <div class="card menu-item">
+          <img src="https://images.pexels.com/photos/6631954/pexels-photo-6631954.jpeg" alt="Falafel">
+          <h3>Falafel</h3>
+          <p>Bolinhos fritos de grão-de-bico temperados.</p>
+          <p class="preco">R$ 15,00</p>
+        </div>
+        <div class="card menu-item">
+          <img src="https://images.pexels.com/photos/4877838/pexels-photo-4877838.jpeg" alt="Shawarma">
+          <h3>Shawarma</h3>
+          <p>Carne temperada enrolada em pão sírio com vegetais.</p>
+          <p class="preco">R$ 22,00</p>
+        </div>
+        <div class="card menu-item">
+          <img src="https://images.pexels.com/photos/32284256/pexels-photo-32284256.jpeg" alt="Hummus">
+          <h3>Hummus</h3>
+          <p>Pasta de grão-de-bico com tahine, alho e limão.</p>
+          <p class="preco">R$ 18,00</p>
+        </div>
+        <div class="card menu-item">
+          <img src="https://images.pexels.com/photos/31724197/pexels-photo-31724197.jpeg" alt="Kibe">
+          <h3>Kibe</h3>
+          <p>Carne moída com trigo e especiarias.</p>
+          <p class="preco">R$ 16,00</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <h2>Sobre Nós</h2>
+      <div class="card">
+        <p>O <strong>Jalin Ha Beis</strong> nasceu da paixão pela culinária árabe. Oferecemos pratos tradicionais com um toque especial de família. Com ingredientes frescos e selecionados, garantimos uma experiência gastronômica autêntica.</p>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <div class="card">
+        <p>Entre em contato pelo WhatsApp ou envie uma mensagem:</p>
+        <form id="formContato">
+          <label>Nome:<br>
+            <input type="text" id="nome" required>
+          </label><br><br>
+          <label>Mensagem:<br>
+            <textarea id="mensagem" rows="4" required></textarea>
+          </label><br><br>
+          <button type="submit" class="botao">Enviar</button>
+        </form>
+        <p id="respostaContato"></p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Jalin Ha Beis - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    document.getElementById('formContato').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const mensagem = document.getElementById('mensagem').value;
+
+      if (nome && mensagem) {
+        document.getElementById('respostaContato').textContent = `Obrigado, ${nome}! Sua mensagem foi enviada.`;
+        this.reset();
+      } else {
+        document.getElementById('respostaContato').textContent = 'Por favor, preencha todos os campos.';
+      }
+    });
+  </script>
+</body>
+</html>
